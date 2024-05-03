@@ -1,0 +1,255 @@
+/* mise en forme de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+}
+main {
+    max-width: 60%; /* Ajustez la largeur max selon vos préférences */
+    margin: 10px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+}
+h2 {
+    text-align: center;
+}
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* terminal print */
+.terminal {
+    width: 80%;
+    max-width: 600px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+.terminal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.terminal-title {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.terminal-style #terminal .prompt span {
+    font-weight: bold; /* Optionnel : mettre le texte en gras */
+}
+.terminal-style #terminal .prompt span:first-child {
+    color: #2ecc71; /* Couleur du texte vert nuancé pour la première partie du prompt */
+}
+.terminal-style #terminal .prompt span:last-child {
+    color: #ffffff; /* Couleur du texte blanc pour la seconde partie du prompt */
+}
+.output {
+    color: #fff; /* Couleur du texte de la sortie */
+}
+
+/* Réinitialisation des styles par défaut et définition des polices */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+.site-title {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-top: 10px;
+    margin-right: 2%;
+}
+.dropbtn {
+    background-color: #8e6647;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+.dropdown:nth-child(2) .dropbtn {
+    background-color: #4CAF50; /* Couleur du deuxième bouton déroulant */
+}
+.dropdown:nth-child(3) .dropbtn {
+    background-color: #2196F3; /* Couleur du troisième bouton déroulant */
+}
+.dropbtn:hover {
+    background-color: #8e44ad; /* Couleur au survol */
+}
+.dropdown:nth-child(2) .dropbtn:hover {
+    background-color: #f1c40f; /* Couleur au survol du deuxième bouton déroulant */
+}
+.dropdown:nth-child(3) .dropbtn:hover {
+    background-color: #922b21; /* Couleur au survol du troisième bouton déroulant */
+}
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+.show {
+    display: block;
+}
+section {
+    text-align: justify;
+    margin: 0 auto; /* Centre le contenu à l'intérieur de la section */
+    max-width: 800px; /* Ajustez la largeur max selon vos préférences */
+}
+section h2 {
+    text-align: center;
+}
+p:first-child {
+    font-weight: bold;
+}
+p:last-child {
+    font-style: italic;
+}
+#featured-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.featured-button {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+.featured-button:hover {
+    transform: scale(1.05);
+}
+.featured-button img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+.featured-button h3 {
+    margin: 15px;
+    text-align: center;
+}
+.featured-button a {
+    color: inherit; /* Utilise la couleur du texte parent (héritée) */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+}
+.featured-button a:hover {
+    text-decoration: underline; /* Ajoute un soulignement au survol si nécessaire */
+}
+.custom-button {
+    display: block;
+    margin: 0 auto; /* Centre le bouton horizontalement */
+    width: 200px;
+    padding: 10px;
+    border-radius: 10px; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */
+    text-align: center;
+    text-decoration: none;
+    color: white; /* Couleur du texte */
+    background-color: #ff6666; /* Couleur de fond */
+    transition: background-color 0.3s ease-in-out; /* Animation de transition de couleur de fond */
+}
+.custom-button:hover {
+    background-color: #3498db;
+}
+.link-button {
+    display: inline-block;
+    width: 200px;
+    margin-right: 5%; /* Ajoute 5% d'espace entre les boutons */
+    padding: 10px;
+    border-radius: 10px; /* Coins arrondis */
+    font-weight: bold; /* Texte en gras */
+    text-align: center;
+    text-decoration: none;
+    color: white; /* Couleur du texte */
+    background-color: #ff6666; /* Couleur de fond */
+    transition: background-color 0.3s ease-in-out;
+}
+.link-button:hover {
+    background-color: #3498db;
+}
+.centered-buttons {
+    text-align: center;
+}
+.centered-buttons .link-button {
+    display: inline-block;
+    margin: 0 5%; /* Ajoute 5% d'espace entre les boutons */
+}
+#terminal {
+    width: 80%;
+    max-width: 600px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+#terminal-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+#terminal-title {
+    font-size: 1.5em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.terminal-style #terminal .prompt span {
+    font-weight: bold; /* Optionnel : mettre le texte en gras */
+}
+.terminal-style #terminal .prompt span:first-child {
+    color: #2ecc71; /* Couleur du texte vert nuancé pour la première partie du prompt */
+}
+.terminal-style #terminal .prompt span:last-child {
+    color: #ffffff; /* Couleur du texte blanc pour la seconde partie du prompt */
+}
+.output {
+    color: #fff; /* Couleur du texte de la sortie */
+}
+.image {
+    width: 100%;
+    max-width: 800px;
+}
+.certificat {
+    width: calc(45% - 20px);
+    padding-left: 1%;
+    padding-right: 2%;
+}

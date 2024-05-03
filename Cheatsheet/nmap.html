@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+    <title>Pentest Tools</title>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Pentest Tools</h1>
+
+        <div class="dropdown">
+            <a href="../tool/tool.html" class="dropbtn">Tools</a>
+
+        </div>
+        <div class="dropdown">
+            <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
+        </div>
+        <div class="dropdown">
+            <a href="../index.html" class="dropbtn">Acceuil</a>
+        </div>
+        <br>
+    </header>
+    <main>
+        <h1>Nmap Cheatsheet</h1>
+        <div>
+            <h2>How to install nmap</h2>
+            <section>
+                <p>nmap installation:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Installation</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install nmap</span></span>
+                </div>
+            </section>
+
+        </div>
+        <div>
+            <h2>Useful tag for nmap</h2>
+            <p>
+                <br>-p $PORT1-$PORT2: Scan from port 1 to port 2
+                <br>-p $PORT1,$PORT2: Scan port 1 and port 2
+                <br>-p-: Scann all port
+                <br>-sV: Scan in order to determine version of the app running on the target
+                <br>-O: Scan in order to determine the OS running on the target
+                <br>-sT: TCP connect scan
+                <br>-sU: UDP scan
+                <br>-sn: Probe only in order to discorver hosts
+            </p>
+        </div>
+        <div>
+            <h2>Exemple of nmap command</h2>
+            <section>
+                <p>Nmap scan of an network</p>
+                <div class="terminal">
+                    <div class="terminal-title">Network scan</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -O $ip.*.*</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Scan all port of an target:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Target scan</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sV -O -p- $ip</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Use a script on the target:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Script</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -p $PORT --script $SCRIPT $IP</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Escape the firewall:</p>
+                <div class="terminal">
+                    <div class="terminal-title">firewall escape</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sV -T1 -f $IP</span></span>
+                </div>
+            </section>
+            <br>
+        </div>
+    </main>
+</body>
