@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+    <title>Metasploit Cheatsheet</title>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Pentest Tools</h1>
+        <div class="dropdown">
+            <a href="../tool/tool.html" class="dropbtn">Tools</a>
+        </div>
+        <div class="dropdown">
+            <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
+        </div>
+        <div class="dropdown">
+            <a href="../index.html" class="dropbtn">Acceuil</a>
+        </div>
+        <br>
+    </header>
+    <main>
+        <h1>Metasploit Cheatsheet</h1>
+        <div>
+            <h2>How to Install Metasploit</h2>
+            <section>
+                <p>Metasploit installation:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Installation</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install metasploit-framework</span></span>
+                </div>
+            </section>
+        </div>
+        <div>
+            <h2>Useful Commands for Metasploit</h2>
+            <p>
+                <br>msfconsole: Start the Metasploit Framework console
+                <br>search [name]: Search for an exploit/module
+                <br>use [exploit/module]: Select an exploit/module
+                <br>show options: Show available options for the selected exploit/module
+                <br>set [option] [value]: Set a specific option value
+                <br>exploit: Run the selected exploit
+                <br>sessions -l: List active sessions
+                <br>sessions -i [ID]: Interact with a specific session
+            </p>
+        </div>
+        <div>
+            <h2>Examples of Metasploit Commands</h2>
+            <section>
+                <p>Start Metasploit console:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Start Console</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfconsole</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Search for an exploit:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Search Exploit</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">search [name]</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Select an exploit:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Select Exploit</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">use [exploit/module]</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Show exploit options:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Show Options</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">show options</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Set an option value:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Set Option</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">set [option] [value]</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Run the exploit:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Run Exploit</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">exploit</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>List active sessions:</p>
+                <div class="terminal">
+                    <div class="terminal-title">List Sessions</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">sessions -l</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Interact with a session:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Interact Session</div>
+                    <span class="prompt"><span style="color: #2ecc71;">msf</span>:<span style="color: #0074cc;">> </span><span style="color: #ffffff;">sessions -i [ID]</span></span>
+                </div>
+            </section>
+            <br>
+        </div>
+    </main>
+</body>
+</html>

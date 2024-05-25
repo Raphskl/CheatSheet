@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
-    <title>Pentest Tools</title>
+    <title>Nmap Cheatsheet</title>
 </head>
 <body>
     <header>
         <h1 class="site-title">Pentest Tools</h1>
-
         <div class="dropdown">
             <a href="../tool/tool.html" class="dropbtn">Tools</a>
-
         </div>
         <div class="dropdown">
             <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
@@ -26,63 +24,93 @@
     <main>
         <h1>Nmap Cheatsheet</h1>
         <div>
-            <h2>How to install nmap</h2>
+            <h2>How to Install Nmap</h2>
             <section>
-                <p>nmap installation:</p>
+                <p>Nmap installation:</p>
                 <div class="terminal">
                     <div class="terminal-title">Installation</div>
                     <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install nmap</span></span>
                 </div>
             </section>
-
         </div>
         <div>
-            <h2>Useful tag for nmap</h2>
+            <h2>Useful Commands for Nmap</h2>
             <p>
-                <br>-p $PORT1-$PORT2: Scan from port 1 to port 2
-                <br>-p $PORT1,$PORT2: Scan port 1 and port 2
-                <br>-p-: Scann all port
-                <br>-sV: Scan in order to determine version of the app running on the target
-                <br>-O: Scan in order to determine the OS running on the target
-                <br>-sT: TCP connect scan
-                <br>-sU: UDP scan
-                <br>-sn: Probe only in order to discorver hosts
+                <br>-sS: Perform a stealthy SYN scan
+                <br>-sT: Perform a TCP connect scan
+                <br>-sU: Perform a UDP scan
+                <br>-p [port]: Specify the port to scan
+                <br>-p-: Scan all 65535 ports
+                <br>-O: Enable OS detection
+                <br>-A: Enable OS detection, version detection, script scanning, and traceroute
+                <br>-v: Increase verbosity level
+                <br>-Pn: Disable host discovery
+                <br>-T[0-5]: Set timing template (0 = slowest, 5 = fastest)
+                <br>--script [script]: Specify a script to run
+                <br>-oN [file]: Save output in normal format
+                <br>-oX [file]: Save output in XML format
+                <br>-oG [file]: Save output in grepable format
             </p>
         </div>
         <div>
-            <h2>Exemple of nmap command</h2>
+            <h2>Examples of Nmap Commands</h2>
             <section>
-                <p>Nmap scan of an network</p>
+                <p>Perform a basic SYN scan:</p>
                 <div class="terminal">
-                    <div class="terminal-title">Network scan</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -O $ip.*.*</span></span>
+                    <div class="terminal-title">SYN Scan</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sS 192.168.1.1</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Scan all port of an target:</p>
+                <p>Perform a TCP connect scan:</p>
                 <div class="terminal">
-                    <div class="terminal-title">Target scan</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sV -O -p- $ip</span></span>
+                    <div class="terminal-title">TCP Connect Scan</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sT 192.168.1.1</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Use a script on the target:</p>
+                <p>Perform a UDP scan:</p>
                 <div class="terminal">
-                    <div class="terminal-title">Script</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -p $PORT --script $SCRIPT $IP</span></span>
+                    <div class="terminal-title">UDP Scan</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sU 192.168.1.1</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Escape the firewall:</p>
+                <p>Perform OS detection:</p>
                 <div class="terminal">
-                    <div class="terminal-title">firewall escape</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sV -T1 -f $IP</span></span>
+                    <div class="terminal-title">OS Detection</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -O 192.168.1.1</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Scan all ports:</p>
+                <div class="terminal">
+                    <div class="terminal-title">All Ports Scan</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -p- 192.168.1.1</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Perform a service version detection scan:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Version Detection</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -sV 192.168.1.1</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Save the output in normal format:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Save Output</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ nmap -oN output.txt 192.168.1.1</span></span>
                 </div>
             </section>
             <br>
         </div>
     </main>
 </body>
+</html>

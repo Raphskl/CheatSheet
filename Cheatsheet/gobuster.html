@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+    <title>Gobuster Cheatsheet</title>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Pentest Tools</h1>
+        <div class="dropdown">
+            <a href="../tool/tool.html" class="dropbtn">Tools</a>
+        </div>
+        <div class="dropdown">
+            <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
+        </div>
+        <div class="dropdown">
+            <a href="../index.html" class="dropbtn">Acceuil</a>
+        </div>
+        <br>
+    </header>
+    <main>
+        <h1>Gobuster Cheatsheet</h1>
+        <div>
+            <h2>How to Install Gobuster</h2>
+            <section>
+                <p>Gobuster installation:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Installation</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install gobuster</span></span>
+                </div>
+            </section>
+        </div>
+        <div>
+            <h2>Useful Commands for Gobuster</h2>
+            <p>
+                <br>-u [URL]: Specify the target URL
+                <br>-w [WORDLIST]: Specify the wordlist to use
+                <br>-x [EXTENSIONS]: Specify file extensions to look for (e.g., php, txt)
+                <br>-t [THREADS]: Specify the number of threads to use
+                <br>-e: Show full URLs in the output
+                <br>-k: Skip SSL/TLS certificate verification
+                <br>-o [OUTPUT]: Specify an output file
+                <br>dir: Use directory/file mode
+                <br>dns: Use DNS subdomain mode
+                <br>s3: Use AWS S3 bucket mode
+                <br>vhost: Use virtual host mode
+            </p>
+        </div>
+        <div>
+            <h2>Examples of Gobuster Commands</h2>
+            <section>
+                <p>Directory and file brute-forcing:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Directory Brute-force</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ gobuster dir -u http://example.com -w /path/to/wordlist.txt</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>DNS subdomain brute-forcing:</p>
+                <div class="terminal">
+                    <div class="terminal-title">DNS Brute-force</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ gobuster dns -d example.com -w /path/to/wordlist.txt</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Brute-forcing with specified extensions:</p>
+                <div class="terminal">
+                    <div class="terminal-title">File Extensions</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ gobuster dir -u http://example.com -w /path/to/wordlist.txt -x php,txt</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Skipping SSL/TLS certificate verification:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Skip SSL Verification</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ gobuster dir -u https://example.com -w /path/to/wordlist.txt -k</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Specifying number of threads:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Set Threads</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ gobuster dir -u http://example.com -w /path/to/wordlist.txt -t 50</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Saving output to a file:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Output to File</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ gobuster dir -u http://example.com -w /path/to/wordlist.txt -o output.txt</span></span>
+                </div>
+            </section>
+            <br>
+        </div>
+    </main>
+</body>
+</html>

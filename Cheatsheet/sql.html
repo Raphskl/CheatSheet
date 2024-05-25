@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+    <title>SQL Cheat Sheet</title>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">SQL Cheat Sheet</h1>
+        <div class="dropdown">
+            <a href="../tool/tool.html" class="dropbtn">Tools</a>
+        </div>
+        <div class="dropdown">
+            <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
+        </div>
+        <div class="dropdown">
+            <a href="../index.html" class="dropbtn">Acceuil</a>
+        </div>
+        <br>
+    </header>
+    <main>
+        <h1>SQL Cheat Sheet</h1>
+
+        <div>
+            <h2>1. Basic SQL Commands</h2>
+            <p>SELECT: </p>
+            <div class="terminal">
+                <div class="terminal-title">SELECT</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, column2<br>FROM table_name;</span></span>
+            </div>
+
+            <p>INSERT: </p>
+            <div class="terminal">
+                <div class="terminal-title">INSERT</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ INSERT INTO table_name (column1, column2)<br>VALUES (value1, value2);</span></span>
+            </div>
+
+            <p>UPDATE: </p>
+            <div class="terminal">
+                <div class="terminal-title">UPDATE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ UPDATE table_name<br>SET column1 = value1, column2 = value2<br>WHERE condition;</span></span>
+            </div>
+
+            <p>DELETE: </p>
+            <div class="terminal">
+                <div class="terminal-title">DELETE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ DELETE FROM table_name<br>WHERE condition;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>2. Filtering and Sorting Data</h2>
+            <p>WHERE: </p>
+            <div class="terminal">
+                <div class="terminal-title">WHERE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, column2<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+
+            <p>ORDER BY: </p>
+            <div class="terminal">
+                <div class="terminal-title">ORDER BY</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, column2<br>FROM table_name<br>ORDER BY column1 [ASC|DESC];</span></span>
+            </div>
+
+            <p>LIMIT: </p>
+            <div class="terminal">
+                <div class="terminal-title">LIMIT</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, column2<br>FROM table_name<br>LIMIT number;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>3. Joining Tables</h2>
+            <p>INNER JOIN: </p>
+            <div class="terminal">
+                <div class="terminal-title">INNER JOIN</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT a.column1, b.column2<br>FROM table1 a<br>INNER JOIN table2 b<br>ON a.common_field = b.common_field;</span></span>
+            </div>
+
+            <p>LEFT JOIN: </p>
+            <div class="terminal">
+                <div class="terminal-title">LEFT JOIN</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT a.column1, b.column2<br>FROM table1 a<br>LEFT JOIN table2 b<br>ON a.common_field = b.common_field;</span></span>
+            </div>
+
+            <p>RIGHT JOIN: </p>
+            <div class="terminal">
+                <div class="terminal-title">RIGHT JOIN</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT a.column1, b.column2<br>FROM table1 a<br>RIGHT JOIN table2 b<br>ON a.common_field = b.common_field;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>4. Aggregating Data</h2>
+            <p>COUNT: </p>
+            <div class="terminal">
+                <div class="terminal-title">COUNT</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT COUNT(column_name)<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+
+            <p>SUM: </p>
+            <div class="terminal">
+                <div class="terminal-title">SUM</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT SUM(column_name)<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+
+            <p>AVG: </p>
+            <div class="terminal">
+                <div class="terminal-title">AVG</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT AVG(column_name)<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+
+            <p>MAX: </p>
+            <div class="terminal">
+                <div class="terminal-title">MAX</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT MAX(column_name)<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+
+            <p>MIN: </p>
+            <div class="terminal">
+                <div class="terminal-title">MIN</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT MIN(column_name)<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>5. Grouping Data</h2>
+            <p>GROUP BY: </p>
+            <div class="terminal">
+                <div class="terminal-title">GROUP BY</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, COUNT(column2)<br>FROM table_name<br>GROUP BY column1;</span></span>
+            </div>
+
+            <p>HAVING: </p>
+            <div class="terminal">
+                <div class="terminal-title">HAVING</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, COUNT(column2)<br>FROM table_name<br>GROUP BY column1<br>HAVING COUNT(column2) &gt; value;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>6. Subqueries</h2>
+            <p>Subquery in SELECT: </p>
+            <div class="terminal">
+                <div class="terminal-title">Subquery in SELECT</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1,<br>&nbsp;&nbsp;&nbsp;&nbsp;(SELECT MAX(column2) FROM table2 WHERE table2.column1 = table1.column1) AS max_value<br>FROM table1;</span></span>
+            </div>
+
+            <p>Subquery in WHERE: </p>
+            <div class="terminal">
+                <div class="terminal-title">Subquery in WHERE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ SELECT column1, column2<br>FROM table_name<br>WHERE column1 IN (SELECT column1 FROM table2 WHERE condition);</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>7. Data Definition Language (DDL)</h2>
+            <p>CREATE TABLE: </p>
+            <div class="terminal">
+                <div class="terminal-title">CREATE TABLE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ CREATE TABLE table_name (<br>&nbsp;&nbsp;&nbsp;&nbsp;column1 datatype constraint,<br>&nbsp;&nbsp;&nbsp;&nbsp;column2 datatype constraint,<br>&nbsp;&nbsp;&nbsp;&nbsp;...<br>);</span></span>
+            </div>
+
+            <p>ALTER TABLE: </p>
+            <div class="terminal">
+                <div class="terminal-title">ALTER TABLE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ ALTER TABLE table_name<br>ADD column_name datatype;</span></span>
+            </div>
+            <div class="terminal">
+                <div class="terminal-title">ALTER TABLE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ ALTER TABLE table_name<br>DROP COLUMN column_name;</span></span>
+            </div>
+
+            <p>DROP TABLE: </p>
+            <div class="terminal">
+                <div class="terminal-title">DROP TABLE</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ DROP TABLE table_name;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>8. Indexes</h2>
+            <p>CREATE INDEX: </p>
+            <div class="terminal">
+                <div class="terminal-title">CREATE INDEX</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ CREATE INDEX index_name<br>ON table_name (column1, column2);</span></span>
+            </div>
+
+            <p>DROP INDEX: </p>
+            <div class="terminal">
+                <div class="terminal-title">DROP INDEX</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ DROP INDEX index_name;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>9. Transactions</h2>
+            <p>BEGIN TRANSACTION: </p>
+            <div class="terminal">
+                <div class="terminal-title">BEGIN TRANSACTION</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ BEGIN;</span></span>
+            </div>
+
+            <p>COMMIT: </p>
+            <div class="terminal">
+                <div class="terminal-title">COMMIT</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ COMMIT;</span></span>
+            </div>
+
+            <p>ROLLBACK: </p>
+            <div class="terminal">
+                <div class="terminal-title">ROLLBACK</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ ROLLBACK;</span></span>
+            </div>
+        </div>
+
+        <div>
+            <h2>10. Views</h2>
+            <p>CREATE VIEW: </p>
+            <div class="terminal">
+                <div class="terminal-title">CREATE VIEW</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ CREATE VIEW view_name AS<br>SELECT column1, column2<br>FROM table_name<br>WHERE condition;</span></span>
+            </div>
+
+            <p>DROP VIEW: </p>
+            <div class="terminal">
+                <div class="terminal-title">DROP VIEW</div>
+                <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ DROP VIEW view_name;</span></span>
+            </div>
+        </div>
+
+    </main>
+</body>
+</html>

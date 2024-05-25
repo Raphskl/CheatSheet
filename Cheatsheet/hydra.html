@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
-    <title>Pentest Tools</title>
+    <title>Hydra Cheatsheet</title>
 </head>
 <body>
     <header>
         <h1 class="site-title">Pentest Tools</h1>
-
         <div class="dropdown">
             <a href="../tool/tool.html" class="dropbtn">Tools</a>
-
         </div>
         <div class="dropdown">
             <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
@@ -26,123 +24,81 @@
     <main>
         <h1>Hydra Cheatsheet</h1>
         <div>
-            <h2>How to install Hydra and wordlists</h2>
+            <h2>How to Install Hydra</h2>
             <section>
                 <p>Hydra installation:</p>
                 <div class="terminal">
                     <div class="terminal-title">Installation</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install hydra-gtk</span></span>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install hydra</span></span>
                 </div>
             </section>
-            <section>
-                <p>Wordlists download</p>
-                <div class="terminal">
-                    <div class="terminal-title">Wordlists</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ git clone https://github.com/danielmiessler/SecLists</span></span>
-                </div>
-            </section>
-
         </div>
         <div>
-            <h2>Useful tag for Hydra</h2>
+            <h2>Useful Commands for Hydra</h2>
             <p>
-                <br>-l &lt;LOGIN>: Pass single username/login
-                <br>-L &lt;FILE>: Pass multiple usernames/logins
-                <br>-p &lt;LOGIN>: Pass single known password
-                <br>-P &lt;FILE>: Pass a password list or wordlist (ex.: rockyou.txt)
-                <br>-s &lt;PORT>: Use custom port
-                <br>-f: Exit as soon as at least one a login and a password combination is found
-                <br>-R: Restore previous session (if crashed/aborted)
+                <br>-l [login]: Specify a single username
+                <br>-L [file]: Specify a file containing usernames
+                <br>-p [password]: Specify a single password
+                <br>-P [file]: Specify a file containing passwords
+                <br>-s [port]: Specify the port to use
+                <br>-t [tasks]: Specify the number of parallel tasks
+                <br>-v / -V: Verbose mode / Very verbose mode
+                <br>-e [nsr]: Try null password / try the login as the password / try a reverse login
+                <br>-o [file]: Write found login/password pairs to file
+                <br>-f: Exit after the first found login/password pair
             </p>
         </div>
         <div>
-            <h2>Exemple of hydra command</h2>
+            <h2>Examples of Hydra Commands</h2>
             <section>
-                <p>Hydra brute force against SNMP:</p>
+                <p>Brute force SSH with a single username and a password list:</p>
                 <div class="terminal">
-                    <div class="terminal-title">SNMP</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -P password-file.txt -v $ip snmp</span></span>
+                    <div class="terminal-title">SSH Brute-force</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l admin -P /path/to/password_list.txt ssh://target_ip</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Hydra brute force against FTP:</p>
+                <p>Brute force FTP with a username list and a password list:</p>
                 <div class="terminal">
-                    <div class="terminal-title">FTP</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -f -l user -P /usr/share/wordlists/rockyou.txt $IP ftp</span></span>
+                    <div class="terminal-title">FTP Brute-force</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -L /path/to/user_list.txt -P /path/to/password_list.txt ftp://target_ip</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Hydra brute force against ssh:</p>
+                <p>Brute force a web form using POST requests:</p>
                 <div class="terminal">
-                    <div class="terminal-title">ssh</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -f -l user -P /usr/share/wordlists/rockyou.txt $IP -t 4 ssh</span></span>
+                    <div class="terminal-title">Web Form Brute-force</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l admin -P /path/to/password_list.txt target_ip http-post-form "/login.php:username=^USER^&password=^PASS^:F=incorrect"</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Hydra brute force against POP3:</p>
+                <p>Brute force with specified port and number of parallel tasks:</p>
                 <div class="terminal">
-                    <div class="terminal-title">POP3</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -L users.txt -P passwords.txt -f $ip pop3 -V</span></span>
+                    <div class="terminal-title">Specified Port and Tasks</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l admin -P /path/to/password_list.txt -s 2222 -t 4 ssh://target_ip</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Hydra brute force against SMTP:</p>
+                <p>Brute force RDP with exit after first found pair:</p>
                 <div class="terminal">
-                    <div class="terminal-title">SMTP</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -P passwords.txt $ip smtp -V</span></span>
+                    <div class="terminal-title">RDP Brute-force</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l admin -P /path/to/password_list.txt -f rdp://target_ip</span></span>
                 </div>
             </section>
             <br>
             <section>
-                <p>Hydra brute force against http-post-form:</p>
+                <p>Write found login/password pairs to a file:</p>
                 <div class="terminal">
-                    <div class="terminal-title">http-post-form</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l user -P /usr/share/wordlists/rockyou.txt $IP http-post-form "&lt;Login Page>:&lt;Request Body>:&lt;Error Message>"</span></span>
+                    <div class="terminal-title">Output to File</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l admin -P /path/to/password_list.txt -o found_credentials.txt ssh://target_ip</span></span>
                 </div>
             </section>
             <br>
-            <section>
-                <p>Hydra brute force against RDP:</p>
-                <div class="terminal">
-                    <div class="terminal-title">RDP</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -f -l administrator -P /usr/share/wordlists/rockyou.txt rdp://$IP</span></span>
-                </div>
-            </section>
-            <br>
-            <section>
-                <p>Hydra brute force against SMB:</p>
-                <div class="terminal">
-                    <div class="terminal-title">SMB</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -f -l user -P /usr/share/wordlists/rockyou.txt $IP smb</span></span>
-                </div>
-            </section>
-            <br>
-            <section>
-                <p>Hydra brute force against WordPress:</p>
-                <div class="terminal">
-                    <div class="terminal-title">WordPress</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -f -l user -P /usr/share/wordlists/rockyou.txt $IP -V http-form-post '/wp-login.php:log=^USER^&pwd=^PASS^&wp-submit=Log In&test-cookie=1:S=Location'</span></span>
-                </div>
-            </section>
-            <br>
-            <section>
-                <p>Hydra brute force against LDAP:</p>
-                <div class="terminal">
-                    <div class="terminal-title">LDAP</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -l user -P /usr/share/wordlists/rockyou.txt $IP ldap2 -V -f</span></span>
-                </div>
-            </section>
-            <section>
-                <p>Hydra brute force against MySQL:</p>
-                <div class="terminal">
-                    <div class="terminal-title">MySQL</div>
-                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ hydra -f -l user -P /usr/share/wordlists/rockyou.txt $IP mysql</span></span>
-                </div>
-            </section>
         </div>
     </main>
 </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../image/favicon.ico" type="image/x-icon"/>
+    <title>John the Ripper Cheatsheet</title>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Pentest Tools</h1>
+        <div class="dropdown">
+            <a href="../tool/tool.html" class="dropbtn">Tools</a>
+        </div>
+        <div class="dropdown">
+            <a href="../Cheatsheet/cheatsheet.html" class="dropbtn">CheatSheet</a>
+        </div>
+        <div class="dropdown">
+            <a href="../index.html" class="dropbtn">Acceuil</a>
+        </div>
+        <br>
+    </header>
+    <main>
+        <h1>John the Ripper Cheatsheet</h1>
+        <div>
+            <h2>How to Install John the Ripper</h2>
+            <section>
+                <p>John the Ripper installation:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Installation</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ sudo apt install john</span></span>
+                </div>
+            </section>
+        </div>
+        <div>
+            <h2>Useful Commands for John the Ripper</h2>
+            <p>
+                <br>--wordlist=[file]: Specify the wordlist to use
+                <br>--rules: Enable word mangling rules for wordlist mode
+                <br>--incremental: Use incremental mode
+                <br>--mask=[mask]: Use mask mode for brute-forcing
+                <br>--single: Use single crack mode
+                <br>--format=[format]: Specify the hash format
+                <br>--show: Show cracked passwords
+                <br>--session=[name]: Save the session with the specified name
+                <br>--restore=[name]: Restore the session with the specified name
+                <br>--fork=[N]: Fork N processes
+            </p>
+        </div>
+        <div>
+            <h2>Examples of John the Ripper Commands</h2>
+            <section>
+                <p>Crack a password hash using a wordlist:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Wordlist Mode</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --wordlist=/path/to/wordlist.txt /path/to/hashfile</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Enable word mangling rules:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Word Mangling Rules</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --wordlist=/path/to/wordlist.txt --rules /path/to/hashfile</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Use incremental mode for brute-forcing:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Incremental Mode</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --incremental /path/to/hashfile</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Use mask mode for brute-forcing:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Mask Mode</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --mask=?a?a?a?a?a /path/to/hashfile</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Show cracked passwords:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Show Cracked Passwords</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --show /path/to/hashfile</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Save and restore session:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Save and Restore Session</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --session=my_session --wordlist=/path/to/wordlist.txt /path/to/hashfile</span></span>
+                    <br>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --restore=my_session</span></span>
+                </div>
+            </section>
+            <br>
+            <section>
+                <p>Fork multiple processes:</p>
+                <div class="terminal">
+                    <div class="terminal-title">Fork Processes</div>
+                    <span class="prompt"><span style="color: #2ecc71;">username@machine_name</span>:<span style="color: #0074cc;">~</span><span style="color: #ffffff;">$ john --fork=4 --wordlist=/path/to/wordlist.txt /path/to/hashfile</span></span>
+                </div>
+            </section>
+            <br>
+        </div>
+    </main>
+</body>
+</html>
